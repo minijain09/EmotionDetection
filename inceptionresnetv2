@@ -1,0 +1,9 @@
+#InceptionResNetV2
+from keras.applications.inception_resnet_v2 import InceptionResNetV2
+model = Sequential()
+model.add(InceptionResNetV2(include_top='False', input_shape=(299,299,3)))
+#model.add(Flatten())
+model.add(Dense(256, activation='softmax'))
+model.add(Dropout(0.25))
+model.add(Dense(6, activation='softmax'))
+#model.add(Dense(7, activation='softmax'))
